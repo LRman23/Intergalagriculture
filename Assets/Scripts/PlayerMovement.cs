@@ -55,7 +55,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        MovePlayer();
+        if (!CraftingSystem.instance.isOpen && !InventorySystem.Instance.isOpen)
+        {
+            MovePlayer();
+        }
+        
     }
 
     private void MyInput()
